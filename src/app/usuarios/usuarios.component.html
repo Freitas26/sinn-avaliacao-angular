@@ -1,3 +1,15 @@
-<p>
-  usuarios works!
-</p>
+<table style="width:100%">
+  <tr>
+    <th>Nome</th>
+    <th>documento</th>
+    <th>Juridica</th>
+    <th>dataExpiracao</th>
+  </tr>
+    <tr *ngFor="let usuario of usuarios">
+      <td>{{usuario.nome}}</td>
+      <td>{{usuario.documento}}</td>
+      <td>{{usuario.isJuridica}}</td>
+      <td>{{usuario.dataExpiracao}}</td>
+    </tr>
+
+</table>

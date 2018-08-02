@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { MainComponent } from './core/main/main.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { UsuarioFormComponent } from './usuario-form/usuario-form.component';
 
 
 
@@ -25,6 +26,15 @@ export const routes: Routes = [
       active: true
     },
 
+  },
+  {
+    path: 'usuarioform',
+    component: UsuarioFormComponent,
+    data: {
+      title: 'formulario',
+      icon: 'dashboard',
+      active: true
+    }
   },
   {
     path: '404',

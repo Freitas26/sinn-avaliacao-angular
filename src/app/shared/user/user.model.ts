@@ -1,12 +1,15 @@
-import { Papel } from './papel.model';
+import {Endereco} from './endereco.model';
+import {TypeUser} from './typeUser.model'
 
 export class User {
-  uuid: string;
   nome: string;
+  username:string;
   email: string;
-  interno: boolean;
-  cpf: string;
-  roles: Papel[];
-  areaUsuario: string;
-  perfil: string;
+  documento: string;
+  isJuridica:boolean;
+  enderecos: Endereco[];
+  dataExpiracao: string;
+  tipoUsuario: TypeUser;
+  isAtivo: boolean;
+  constructor(){}
 }

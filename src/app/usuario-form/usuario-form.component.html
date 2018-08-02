@@ -1,0 +1,62 @@
+<div class="example-container">
+<form (ngSubmit)="onSubmit(userForm)" #userForm="ngForm">
+  <mat-form-field>
+    <input matInput id="nome"placeholder="Nome" name="nome"required [(ngModel)]="novoUsuario.nome">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput id="documento"placeholder="Documento" name="documento" required [(ngModel)]="novoUsuario.documento">
+  </mat-form-field>
+  <mat-checkbox id="isJuridica"placeholder="isJuridica" name="isJuridica"
+  [(ngModel)]="novoUsuario.isJuridica">Pessoa Juridica</mat-checkbox>
+<p>
+  <mat-form-field>
+    <input matInput id="username" placeholder="Nome de Usuario" name="username"required [(ngModel)]="novoUsuario.username">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput id="Email" placeholder="Email" name="email"required [(ngModel)]="novoUsuario.email">
+  </mat-form-field>
+</p>
+
+
+<p>
+  <mat-form-field>
+    <input type="date" id="data" matInput placeholder="Data de Expiração" name="dataExpiracao"required [(ngModel)]="novoUsuario.dataExpiracao">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select id="usertype" name="usertype" placeholder="Tipo de Usuario" [(ngModel)]="novoUsuario.tipoUsuario">
+      <mat-option *ngFor="let tipo of tiposUsuario" [value]="tipo">
+      {{tipo.nome}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</p>
+
+<p>
+  <mat-form-field>
+    <input matInput id="cep" name="cep" placeholder="CEP" maxlength="8" ng-pattern="/^[0-9]{8}$/" required
+    [(ngModel)]="atualEndereco.cep"  (blur)="preencher(atualEndereco.cep)">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput id="logradouro" name="logradouro" placeholder="Logradouro" required [(ngModel)]="atualEndereco.logradouro">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput id="numero" name="numero" placeholder="Numero"  [(ngModel)]="atualEndereco.numero">
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field>
+    <input matInput id="bairro" name="bairro" placeholder="Bairro"  [(ngModel)]="atualEndereco.bairro">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput id="localidade" name="localidade" placeholder="Localidade"  [(ngModel)]="atualEndereco.localidade">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput id="uf" name="uf" placeholder="UF" [(ngModel)]="atualEndereco.uf">
+  </mat-form-field>
+  <button mat-raised-button type="button" (click)="addToArray()">adicionar endereço</button>
+
+</p>
+<button mat-raised-button type="submit">Submit</button>
+</form>
+
+</div>
